@@ -1,0 +1,12 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "delfino511-lp",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["serve", "-p", "8772", "."],
+      "port": 8772,
+      "cwd": "/Users/yamadanaoyuki/Documents/01_Obsidian/00_DevVault/02_Saas/delfino511-lp"
+    }
+  ]
+}

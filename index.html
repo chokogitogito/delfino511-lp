@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GELATERIA & DELFINO 511 | 宇都宮のジェラート専門店</title>
+  <meta name="description" content="宇都宮にある本格イタリアンジェラート専門店。厳選した素材から毎日手作りする、濃厚でなめらかな本場の味をお楽しみください。" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Noto+Sans+JP:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ========== HEADER / NAV ========== -->
+  <header class="header" id="top">
+    <nav class="nav">
+      <div class="nav__logo">
+        <span class="nav__logo-dolphin">🐬</span>
+        <div class="nav__logo-text">
+          <span class="nav__logo-main">DELFINO 511</span>
+          <span class="nav__logo-sub">GELATERIA</span>
+        </div>
+      </div>
+      <ul class="nav__links">
+        <li><a href="#concept">コンセプト</a></li>
+        <li><a href="#flavors">フレーバー</a></li>
+        <li><a href="#story">ストーリー</a></li>
+        <li><a href="#access">アクセス</a></li>
+      </ul>
+      <button class="nav__menu-btn" id="menuBtn" aria-label="メニューを開く">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+    <!-- モバイルメニュー -->
+    <div class="nav__mobile" id="mobileMenu">
+      <ul>
+        <li><a href="#concept" onclick="closeMenu()">コンセプト</a></li>
+        <li><a href="#flavors" onclick="closeMenu()">フレーバー</a></li>
+        <li><a href="#story" onclick="closeMenu()">ストーリー</a></li>
+        <li><a href="#access" onclick="closeMenu()">アクセス</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero">
+    <div class="hero__bg">
+      <div class="hero__gelato-art">
+        <div class="gelato-cone gelato-cone--1">
+          <div class="scoop scoop--pistachio"></div>
+          <div class="scoop scoop--strawberry"></div>
+          <div class="cone-body"></div>
+        </div>
+        <div class="gelato-cone gelato-cone--2">
+          <div class="scoop scoop--chocolate"></div>
+          <div class="scoop scoop--vanilla"></div>
+          <div class="cone-body"></div>
+        </div>
+        <div class="gelato-cone gelato-cone--3">
+          <div class="scoop scoop--mango"></div>
+          <div class="scoop scoop--matcha"></div>
+          <div class="cone-body"></div>
+        </div>
+      </div>
+      <div class="hero__wave"></div>
+    </div>
+    <div class="hero__content">
+      <p class="hero__tagline">宇都宮発、本場イタリアの味</p>
+      <h1 class="hero__title">
+        <span class="hero__title-en">Gelato Artigianale</span>
+        <span class="hero__title-jp">手しごとの美味しさを、<br>あなたへ。</span>
+      </h1>
+      <p class="hero__desc">
+        毎朝、職人が丁寧に仕込む本格ジェラート。<br>
+        栃木の恵みと、イタリアの技が出会う場所。
+      </p>
+      <a href="#flavors" class="hero__cta">フレーバーを見る</a>
+    </div>
+    <div class="hero__scroll">
+      <span>SCROLL</span>
+      <div class="hero__scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ========== 3つの数字 ========== -->
+  <section class="numbers">
+    <div class="container">
+      <div class="numbers__grid">
+        <div class="numbers__item">
+          <span class="numbers__num">30<span class="numbers__unit">+</span></span>
+          <span class="numbers__label">常時フレーバー数</span>
+        </div>
+        <div class="numbers__divider"></div>
+        <div class="numbers__item">
+          <span class="numbers__num">100<span class="numbers__unit">%</span></span>
+          <span class="numbers__label">毎日手作り</span>
+        </div>
+        <div class="numbers__divider"></div>
+        <div class="numbers__item">
+          <span class="numbers__num">0<span class="numbers__unit">g</span></span>
+          <span class="numbers__label">人工添加物</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONCEPT ========== -->
+  <section class="concept" id="concept">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-header__en">Concept</span>
+        <h2 class="section-header__jp">私たちのこだわり</h2>
+      </div>
+      <div class="concept__grid">
+        <div class="concept__card">
+          <div class="concept__icon">
+            <div class="icon-circle icon-circle--blue">
+              <span class="icon-emoji">🌊</span>
+            </div>
+          </div>
+          <h3>DELFINO（ドルフィーノ）の想い</h3>
+          <p>
+            イタリア語で「イルカ」を意味するDELFINO。<br>
+            海のように自由で、イルカのように軽やかな喜びを、
+            一杯のジェラートに込めています。
+          </p>
+        </div>
+        <div class="concept__card">
+          <div class="concept__icon">
+            <div class="icon-circle icon-circle--green">
+              <span class="icon-emoji">🌿</span>
+            </div>
+          </div>
+          <h3>栃木の素材を活かす</h3>
+          <p>
+            地元・栃木の農家と直接連携。<br>
+            いちご王国の完熟とちおとめ、那須の純生クリームなど、
+            旬の素材そのものの風味を最大限に引き出します。
+          </p>
+        </div>
+        <div class="concept__card">
+          <div class="concept__icon">
+            <div class="icon-circle icon-circle--yellow">
+              <span class="icon-emoji">🇮🇹</span>
+            </div>
+          </div>
+          <h3>本場仕込みのレシピ</h3>
+          <p>
+            オーナーがイタリア・フィレンツェで修業して持ち帰った
+            本場の製法。脂肪分を抑えながら素材の旨みを凝縮した、
+            本物のジェラートをお届けします。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FLAVORS ========== -->
+  <section class="flavors" id="flavors">
+    <div class="container">
+      <div class="section-header section-header--light">
+        <span class="section-header__en">Flavors</span>
+        <h2 class="section-header__jp">人気フレーバー</h2>
+        <p class="section-header__desc">季節ごとに入れ替わるフレーバー。今日はどれにしよう？</p>
+      </div>
+      <div class="flavors__grid">
+
+        <div class="flavor-card">
+          <div class="flavor-card__visual flavor-card__visual--strawberry">
+            <div class="flavor-card__swirl"></div>
+            <span class="flavor-card__emoji">🍓</span>
+          </div>
+          <div class="flavor-card__body">
+            <span class="flavor-card__tag">人気No.1</span>
+            <h3>とちおとめストロベリー</h3>
+            <p>栃木産とちおとめを贅沢に使用。甘みと酸味のバランスが絶妙な、いちごの味そのものです。</p>
+          </div>
+        </div>
+
+        <div class="flavor-card">
+          <div class="flavor-card__visual flavor-card__visual--pistachio">
+            <div class="flavor-card__swirl"></div>
+            <span class="flavor-card__emoji">🌰</span>
+          </div>
+          <div class="flavor-card__body">
+            <span class="flavor-card__tag">職人おすすめ</span>
+            <h3>シチリア産ピスタチオ</h3>
+            <p>シチリア・ブロンテ産の最高級ピスタチオを使用。濃厚なコクと自然の甘さが広がります。</p>
+          </div>
+        </div>
+
+        <div class="flavor-card">
+          <div class="flavor-card__visual flavor-card__visual--chocolate">
+            <div class="flavor-card__swirl"></div>
+            <span class="flavor-card__emoji">🍫</span>
+          </div>
+          <div class="flavor-card__body">
+            <span class="flavor-card__tag">定番人気</span>
+            <h3>ダークチョコレート</h3>
+            <p>カカオ70%以上の高品質チョコレートを惜しみなく使用。大人のための深みある苦甘さ。</p>
+          </div>
+        </div>
+
+        <div class="flavor-card">
+          <div class="flavor-card__visual flavor-card__visual--matcha">
+            <div class="flavor-card__swirl"></div>
+            <span class="flavor-card__emoji">🍵</span>
+          </div>
+          <div class="flavor-card__body">
+            <span class="flavor-card__tag">季節限定</span>
+            <h3>宇治抹茶</h3>
+            <p>京都・宇治の最高級抹茶を贅沢に使用。ミルクの甘みと抹茶の香りが口の中で溶け合います。</p>
+          </div>
+        </div>
+
+        <div class="flavor-card">
+          <div class="flavor-card__visual flavor-card__visual--mango">
+            <div class="flavor-card__swirl"></div>
+            <span class="flavor-card__emoji">🥭</span>
+          </div>
+          <div class="flavor-card__body">
+            <span class="flavor-card__tag">夏季限定</span>
+            <h3>アルフォンソマンゴー</h3>
+            <p>「マンゴーの王様」と名高いインド産アルフォンソ種使用。トロピカルな甘さが弾けます。</p>
+          </div>
+        </div>
+
+        <div class="flavor-card">
+          <div class="flavor-card__visual flavor-card__visual--vanilla">
+            <div class="flavor-card__swirl"></div>
+            <span class="flavor-card__emoji">🌸</span>
+          </div>
+          <div class="flavor-card__body">
+            <span class="flavor-card__tag">定番</span>
+            <h3>フィオル・ディ・ラッテ</h3>
+            <p>「ミルクの花」の意。那須産の新鮮な生乳のみで作る、ジェラートの原点となる一品。</p>
+          </div>
+        </div>
+
+      </div>
+      <p class="flavors__note">※フレーバーは仕入れ状況・季節により変更になる場合があります</p>
+    </div>
+  </section>
+
+  <!-- ========== EXPERIENCE ========== -->
+  <section class="experience">
+    <div class="experience__bg-pattern"></div>
+    <div class="container">
+      <div class="experience__inner">
+        <div class="experience__text">
+          <span class="section-header__en">Experience</span>
+          <h2>食べた瞬間、<br>笑顔になれる場所</h2>
+          <p>
+            一口食べた瞬間、「おいしい！」という言葉が
+            自然とこぼれ落ちる。そんな体験をつくるために、
+            私たちは毎朝ジェラートを手作りしています。
+          </p>
+          <p>
+            コーンかカップか迷って、
+            トッピングを選んで、
+            食べ歩きながら笑顔になる——
+            そんな小さな幸せを、511という扉の向こうでお待ちしています。
+          </p>
+          <a href="#access" class="btn btn--primary">お店に来てみる</a>
+        </div>
+        <div class="experience__visual">
+          <div class="experience__gelato-display">
+            <div class="gelato-bowl">
+              <div class="bowl-scoops">
+                <div class="bowl-scoop bowl-scoop--1"></div>
+                <div class="bowl-scoop bowl-scoop--2"></div>
+                <div class="bowl-scoop bowl-scoop--3"></div>
+              </div>
+              <div class="bowl-base"></div>
+              <div class="bowl-shadow"></div>
+            </div>
+            <div class="toppings">
+              <div class="topping topping--1">🍓</div>
+              <div class="topping topping--2">🌿</div>
+              <div class="topping topping--3">✨</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== STORY ========== -->
+  <section class="story" id="story">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-header__en">Our Story</span>
+        <h2 class="section-header__jp">511番地の物語</h2>
+      </div>
+      <div class="story__timeline">
+        <div class="story__item">
+          <div class="story__marker">
+            <div class="story__dot"></div>
+            <div class="story__line"></div>
+          </div>
+          <div class="story__content">
+            <span class="story__year">原点</span>
+            <h3>フィレンツェとの出会い</h3>
+            <p>
+              オーナーがイタリア留学中にフィレンツェの小さなジェラテリアで食べた一口が、すべての始まりでした。
+              「本物のジェラートを、地元・宇都宮に持ち帰りたい」——その想いが511番地の店を生み出しました。
+            </p>
+          </div>
+        </div>
+        <div class="story__item">
+          <div class="story__marker">
+            <div class="story__dot"></div>
+            <div class="story__line"></div>
+          </div>
+          <div class="story__content">
+            <span class="story__year">こだわり</span>
+            <h3>栃木の農家さんとの絆</h3>
+            <p>
+              「地元の美味しさを世界基準で表現したい」。そのために、
+              地元農家を自ら訪れ、素材を一緒に選びます。
+              とちおとめ農家の石川さん、那須の牧場——信頼できる作り手との関係が、
+              DELFINO 511の味の基盤です。
+            </p>
+          </div>
+        </div>
+        <div class="story__item">
+          <div class="story__marker">
+            <div class="story__dot"></div>
+          </div>
+          <div class="story__content">
+            <span class="story__year">今日も</span>
+            <h3>毎朝6時のジェラート仕込み</h3>
+            <p>
+              開店前の静かな厨房で、今日もジェラートを仕込みます。
+              バッチフリーザーが奏でるリズムと、立ち上る香り——この繰り返しが、
+              お客様の「おいしい！」をつくっています。
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== VOICE ========== -->
+  <section class="voice">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-header__en">Voice</span>
+        <h2 class="section-header__jp">お客様の声</h2>
+      </div>
+      <div class="voice__grid">
+        <div class="voice__card">
+          <div class="voice__stars">★★★★★</div>
+          <p>「ピスタチオジェラートが本当においしくて、イタリア旅行を思い出しました。こんな本格派が宇都宮にあるなんて！毎週来てしまいます。」</p>
+          <span class="voice__author">— 30代女性・宇都宮市在住</span>
+        </div>
+        <div class="voice__card">
+          <div class="voice__stars">★★★★★</div>
+          <p>「とちおとめのジェラートが最高！いちごの本当の美味しさってこういうことだと気づきました。子供も大人も大好きな味です。」</p>
+          <span class="voice__author">— 40代男性・家族でご来店</span>
+        </div>
+        <div class="voice__card">
+          <div class="voice__stars">★★★★★</div>
+          <p>「スクープの大きさとコスパが嬉しい。フレーバーが豊富で毎回選ぶのが楽しみ。ダブルで頼むと好きな組み合わせが楽しめてお気に入りです。」</p>
+          <span class="voice__author">— 20代女性・カップルでご来店</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ACCESS ========== -->
+  <section class="access" id="access">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-header__en">Access</span>
+        <h2 class="section-header__jp">アクセス</h2>
+      </div>
+      <div class="access__inner">
+        <div class="access__info">
+          <div class="access__detail">
+            <div class="access__icon">📍</div>
+            <div>
+              <h4>住所</h4>
+              <p>〒321-0000<br>栃木県宇都宮市 511番地<br>（最寄駅：JR宇都宮駅 徒歩〇分）</p>
+            </div>
+          </div>
+          <div class="access__detail">
+            <div class="access__icon">🕐</div>
+            <div>
+              <h4>営業時間</h4>
+              <p>
+                平日 11:00 〜 19:00<br>
+                土日祝 10:00 〜 20:00<br>
+                <span class="access__closed">定休日：火曜日</span>
+              </p>
+            </div>
+          </div>
+          <div class="access__detail">
+            <div class="access__icon">📞</div>
+            <div>
+              <h4>お問い合わせ</h4>
+              <p>028-XXX-XXXX</p>
+            </div>
+          </div>
+          <div class="access__detail">
+            <div class="access__icon">🚗</div>
+            <div>
+              <h4>駐車場</h4>
+              <p>店舗前 〇台（無料）</p>
+            </div>
+          </div>
+          <div class="access__sns">
+            <h4>SNS</h4>
+            <div class="access__sns-links">
+              <a href="#" class="sns-btn sns-btn--instagram">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                </svg>
+                Instagram
+              </a>
+              <a href="#" class="sns-btn sns-btn--x">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                </svg>
+                X (Twitter)
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="access__map">
+          <div class="map-placeholder">
+            <div class="map-placeholder__inner">
+              <div class="map-pin">📍</div>
+              <p>GELATERIA<br>& DELFINO 511</p>
+              <p class="map-placeholder__note">宇都宮市 511番地</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CTA FINAL ========== -->
+  <section class="cta-final">
+    <div class="cta-final__bg">
+      <div class="cta-final__bubbles">
+        <div class="bubble bubble--1"></div>
+        <div class="bubble bubble--2"></div>
+        <div class="bubble bubble--3"></div>
+        <div class="bubble bubble--4"></div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="cta-final__content">
+        <span class="cta-final__dolphin">🐬</span>
+        <h2>今日、ジェラートを食べに来ませんか？</h2>
+        <p>
+          30種類以上のフレーバーの中から、<br class="sp-br">
+          あなただけの一杯を見つけてください。<br>
+          宇都宮の511番地で、お待ちしています。
+        </p>
+        <a href="#access" class="btn btn--white">アクセスを確認する</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__brand">
+          <span class="footer__logo">🐬 GELATERIA & DELFINO 511</span>
+          <p>本場イタリアの味を、宇都宮から。</p>
+        </div>
+        <div class="footer__links">
+          <a href="#concept">コンセプト</a>
+          <a href="#flavors">フレーバー</a>
+          <a href="#story">ストーリー</a>
+          <a href="#access">アクセス</a>
+        </div>
+      </div>
+      <div class="footer__copy">
+        <p>© 2024 GELATERIA & DELFINO 511 All Rights Reserved.</p>
+        <a href="#top" class="footer__totop">▲ TOP</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
