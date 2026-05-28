@@ -1030,48 +1030,364 @@ img { max-width: 100%; display: block; }
 .footer__totop:hover { color: var(--teal-light); }
 
 /* ============================================================
-   SCROLL ANIMATIONS
+   SCROLL ANIMATIONS — .reveal
    ============================================================ */
-.fade-in {
+.reveal {
   opacity: 0;
-  transform: translateY(30px);
+  transform: translateY(32px);
   transition: opacity .7s ease, transform .7s ease;
 }
-.fade-in.visible {
+.reveal.visible {
   opacity: 1;
   transform: translateY(0);
 }
-.fade-in-delay-1 { transition-delay: .1s; }
-.fade-in-delay-2 { transition-delay: .2s; }
-.fade-in-delay-3 { transition-delay: .3s; }
 
 /* ============================================================
-   RESPONSIVE
+   HERO — REVISED (実写背景)
+   ============================================================ */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+.hero__img-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.hero__img-bg img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg,
+    rgba(26,39,68,.72) 0%,
+    rgba(26,39,68,.45) 50%,
+    rgba(42,127,138,.25) 100%
+  );
+}
+.hero__content {
+  position: relative;
+  z-index: 2;
+  max-width: 680px;
+  padding: 140px 40px 100px;
+}
+.hero__tagline {
+  font-family: var(--font-en);
+  font-style: italic;
+  color: var(--teal-light);
+  font-size: 1rem;
+  letter-spacing: .2em;
+  margin-bottom: 20px;
+  display: block;
+}
+.hero__title {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+.hero__title-en {
+  font-family: var(--font-en);
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.1;
+  letter-spacing: -.01em;
+}
+.hero__title-jp {
+  font-family: var(--font-serif);
+  font-size: clamp(1.5rem, 3.8vw, 2.4rem);
+  font-weight: 400;
+  color: rgba(255,255,255,.92);
+  line-height: 1.5;
+  letter-spacing: .08em;
+}
+.hero__desc {
+  color: rgba(255,255,255,.8);
+  font-size: 1rem;
+  line-height: 2;
+  margin-bottom: 36px;
+}
+/* Dual CTA */
+.hero__ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+.hero__cta {
+  display: inline-block;
+  padding: 16px 36px;
+  border-radius: 50px;
+  font-size: .95rem;
+  letter-spacing: .06em;
+  font-weight: 500;
+  transition: transform .25s, box-shadow .25s;
+}
+.hero__cta--primary {
+  background: linear-gradient(135deg, var(--teal), #1a7a50);
+  color: var(--white);
+  box-shadow: 0 8px 32px rgba(42,127,138,.5);
+}
+.hero__cta--primary:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(42,127,138,.55); }
+.hero__cta--secondary {
+  background: rgba(255,255,255,.15);
+  color: var(--white);
+  border: 1.5px solid rgba(255,255,255,.5);
+  backdrop-filter: blur(8px);
+}
+.hero__cta--secondary:hover { background: rgba(255,255,255,.25); transform: translateY(-2px); }
+/* マイクロコピー */
+.hero__microcopy {
+  font-size: .8rem;
+  color: rgba(255,255,255,.6);
+  letter-spacing: .06em;
+}
+
+/* ============================================================
+   FLAVOR CARDS — 実写画像版
+   ============================================================ */
+.flavor-card__visual {
+  height: 200px;
+  position: relative;
+  overflow: hidden;
+}
+.flavor-card__visual img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform .5s ease;
+}
+.flavor-card:hover .flavor-card__visual img { transform: scale(1.06); }
+.flavor-card__overlay {
+  position: absolute;
+  inset: 0;
+  mix-blend-mode: multiply;
+  opacity: .45;
+}
+.flavor-card__overlay--strawberry { background: #e8445a; }
+.flavor-card__overlay--pistachio  { background: #4a8030; }
+.flavor-card__overlay--chocolate  { background: #3a2010; }
+.flavor-card__overlay--matcha     { background: #3a6020; }
+.flavor-card__overlay--mango      { background: #e07000; }
+.flavor-card__overlay--vanilla    { background: #c8a050; }
+
+/* ============================================================
+   EXPERIENCE — 実写画像版
+   ============================================================ */
+.experience__photo-wrap {
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+}
+.experience__photo-wrap img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  display: block;
+}
+.experience__photo-wrap::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  border: 2px solid rgba(255,255,255,.2);
+  z-index: 1;
+  pointer-events: none;
+}
+/* ボタン下マイクロコピー */
+.btn-microcopy {
+  margin-top: 10px;
+  font-size: .78rem;
+  color: var(--text-light);
+  letter-spacing: .04em;
+}
+
+/* ============================================================
+   VOICE — アバター付き
+   ============================================================ */
+.voice__header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+.voice__avatar {
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: .85rem;
+  color: var(--white);
+  flex-shrink: 0;
+  letter-spacing: .04em;
+}
+.voice__avatar--a { background: linear-gradient(135deg, var(--teal), var(--navy)); }
+.voice__avatar--b { background: linear-gradient(135deg, var(--gold), #a06830); }
+.voice__avatar--c { background: linear-gradient(135deg, var(--coral), #c03020); }
+.voice__author { font-size: .78rem; color: var(--teal); letter-spacing: .04em; }
+.voice__card::before { top: 12px; left: 18px; }
+
+/* ============================================================
+   tel: リンク
+   ============================================================ */
+.tel-link {
+  color: var(--teal);
+  font-weight: 500;
+  text-decoration: none;
+  font-size: 1.05rem;
+  letter-spacing: .04em;
+  transition: color .2s;
+}
+.tel-link:hover { color: var(--navy); }
+
+/* ============================================================
+   FAQ セクション
+   ============================================================ */
+.faq {
+  padding: 100px 0;
+  background: var(--cream-dark);
+}
+.faq__list {
+  max-width: 760px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.faq__item {
+  border-bottom: 1px solid rgba(42,127,138,.15);
+}
+.faq__item:first-child { border-top: 1px solid rgba(42,127,138,.15); }
+.faq__question {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  color: var(--navy);
+  font-weight: 500;
+  letter-spacing: .03em;
+  gap: 12px;
+  transition: color .2s;
+}
+.faq__question:hover { color: var(--teal); }
+.faq__icon {
+  font-size: 1.4rem;
+  font-weight: 300;
+  color: var(--teal);
+  flex-shrink: 0;
+  transition: transform .3s;
+  line-height: 1;
+}
+.faq__item.open .faq__icon { transform: rotate(45deg); }
+.faq__answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .4s ease, padding .3s ease;
+}
+.faq__item.open .faq__answer { max-height: 300px; padding-bottom: 20px; }
+.faq__answer p {
+  padding: 0 8px;
+  color: var(--text-light);
+  font-size: .9rem;
+  line-height: 1.95;
+}
+
+/* ============================================================
+   CTA FINAL — マイクロコピー追加
+   ============================================================ */
+.cta-final__microcopy {
+  margin-top: 20px;
+  font-size: .8rem;
+  color: rgba(255,255,255,.55);
+  letter-spacing: .08em;
+}
+
+/* ============================================================
+   モバイル スティッキーCTA
+   ============================================================ */
+.sticky-cta {
+  display: none;
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  z-index: 200;
+  background: var(--navy);
+  border-top: 1px solid rgba(255,255,255,.1);
+  padding: 10px 16px;
+  gap: 10px;
+}
+.sticky-cta__btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 14px 10px;
+  border-radius: 10px;
+  font-size: .82rem;
+  font-weight: 500;
+  letter-spacing: .04em;
+  color: var(--white);
+  background: rgba(255,255,255,.1);
+  border: 1px solid rgba(255,255,255,.2);
+  transition: background .2s;
+  min-height: 48px; /* タップしやすさ確保 */
+}
+.sticky-cta__btn--phone {
+  background: var(--teal);
+  border-color: var(--teal);
+}
+.sticky-cta__btn:hover { background: rgba(255,255,255,.2); }
+.sticky-cta__btn--phone:hover { background: #1f6a74; }
+.sticky-cta__icon { font-size: 1rem; }
+
+/* ============================================================
+   RESPONSIVE — REVISED
    ============================================================ */
 @media (max-width: 900px) {
   .nav__links { display: none; }
   .nav__menu-btn { display: flex; }
   .nav { padding: 16px 24px; }
 
-  .hero__content { padding: 100px 24px 60px; }
-  .hero__gelato-art { right: -5%; transform: translateY(-50%) scale(.7); }
+  .hero__content { padding: 100px 24px 80px; }
   .hero__scroll { left: 24px; }
 
   .concept__grid { grid-template-columns: 1fr; gap: 20px; }
   .flavors__grid { grid-template-columns: repeat(2, 1fr); }
-  .experience__inner { grid-template-columns: 1fr; gap: 48px; }
+  .experience__inner { grid-template-columns: 1fr; gap: 40px; }
   .experience__visual { order: -1; }
   .access__inner { grid-template-columns: 1fr; }
   .voice__grid { grid-template-columns: 1fr; }
   .numbers__divider { margin: 0 24px; }
+
+  /* モバイルスティッキーCTAを表示 */
+  .sticky-cta { display: flex; }
+  /* スティッキーCTAの高さ分だけフッターにパディング */
+  .footer { padding-bottom: 88px; }
 }
 
 @media (max-width: 600px) {
-  .hero__gelato-art { display: none; }
   .flavors__grid { grid-template-columns: 1fr; }
   .numbers__grid { flex-direction: column; gap: 32px; }
   .numbers__divider { width: 60px; height: 1px; margin: 0; }
   .footer__inner { flex-direction: column; }
   .footer__copy { flex-direction: column; text-align: center; }
   .sp-br { display: none; }
+  .hero__ctas { flex-direction: column; }
+  .hero__cta { text-align: center; }
 }

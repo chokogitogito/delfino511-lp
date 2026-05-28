@@ -1,5 +1,5 @@
 /* ============================================================
-   GELATERIA & DELFINO 511 — Script
+   GELATERIA & DELFINO 511 — Script (Revised)
    ============================================================ */
 
 /* ---------- Header scroll ---------- */
@@ -34,26 +34,17 @@ function closeMenu() {
   menuBtn.querySelectorAll('span').forEach(s => { s.style.transform = ''; s.style.opacity = ''; });
 }
 
-/* ---------- Scroll fade-in ---------- */
-const fadeEls = document.querySelectorAll(
-  '.concept__card, .flavor-card, .voice__card, .story__item, .numbers__item, .access__detail, .experience__text, .experience__visual'
-);
-fadeEls.forEach((el, i) => {
-  el.classList.add('fade-in');
-  const delay = (i % 3) * 0.1;
-  el.style.transitionDelay = `${delay}s`;
-});
-
-const observer = new IntersectionObserver((entries) => {
+/* ---------- Scroll reveal (.reveal) ---------- */
+const revealEls = document.querySelectorAll('.reveal');
+const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.classList.add('visible');
-      observer.unobserve(entry.target);
+      revealObserver.unobserve(entry.target);
     }
   });
-}, { threshold: 0.12 });
-
-fadeEls.forEach(el => observer.observe(el));
+}, { threshold: 0.10 });
+revealEls.forEach(el => revealObserver.observe(el));
 
 /* ---------- Numbers count-up ---------- */
 const numEls = document.querySelectorAll('.numbers__num');
@@ -63,23 +54,19 @@ function animateNums() {
   if (numAnimated) return;
   numAnimated = true;
   numEls.forEach(el => {
-    const text = el.textContent;
     const unit = el.querySelector('.numbers__unit');
     const unitText = unit ? unit.textContent : '';
-    const target = parseInt(text.replace(/\D/g, ''));
+    const target = parseInt(el.textContent.replace(/\D/g, ''));
     if (isNaN(target)) return;
     let current = 0;
     const step = Math.ceil(target / 50);
     const interval = setInterval(() => {
       current = Math.min(current + step, target);
-      el.textContent = current + unitText;
-      if (unit) {
-        const newUnit = document.createElement('span');
-        newUnit.className = 'numbers__unit';
-        newUnit.textContent = unitText;
-        el.textContent = current;
-        el.appendChild(newUnit);
-      }
+      el.textContent = current;
+      const newUnit = document.createElement('span');
+      newUnit.className = 'numbers__unit';
+      newUnit.textContent = unitText;
+      el.appendChild(newUnit);
       if (current >= target) clearInterval(interval);
     }, 30);
   });
@@ -90,6 +77,34 @@ const numObserver = new IntersectionObserver((entries) => {
   if (entries[0].isIntersecting) animateNums();
 }, { threshold: 0.5 });
 if (numbersSection) numObserver.observe(numbersSection);
+
+/* ---------- FAQ アコーディオン ---------- */
+document.querySelectorAll('.faq__question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.closest('.faq__item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq__item.open').forEach(i => {
+      i.classList.remove('open');
+      i.querySelector('.faq__question').setAttribute('aria-expanded', 'false');
+    });
+    if (!isOpen) {
+      item.classList.add('open');
+      btn.setAttribute('aria-expanded', 'true');
+    }
+  });
+});
+
+/* ---------- スティッキーCTAの表示制御 ---------- */
+const stickyCta = document.getElementById('stickyCta');
+const heroSection = document.querySelector('.hero');
+if (stickyCta && heroSection) {
+  stickyCta.style.transform = 'translateY(100%)';
+  const stickyObserver = new IntersectionObserver((entries) => {
+    stickyCta.style.transform = entries[0].isIntersecting ? 'translateY(100%)' : 'translateY(0)';
+    stickyCta.style.transition = 'transform .3s ease';
+  }, { threshold: 0.1 });
+  stickyObserver.observe(heroSection);
+}
 
 /* ---------- Smooth anchor with offset ---------- */
 document.querySelectorAll('a[href^="#"]').forEach(a => {
