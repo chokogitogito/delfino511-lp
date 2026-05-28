@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Noto+Sans+JP:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css?v=3" />
 </head>
 <body>
 
@@ -21,8 +21,8 @@
       <div class="nav__logo">
         <span class="nav__logo-dolphin">🐬</span>
         <div class="nav__logo-text">
-          <span class="nav__logo-main">Delfino 511</span>
-          <span class="nav__logo-sub">Gelateria</span>
+          <span class="nav__logo-main">Gelateria</span>
+          <span class="nav__logo-sub">& Delfino 511</span>
         </div>
       </div>
       <ul class="nav__links">
@@ -49,33 +49,37 @@
 
   <!-- ========== HERO ========== -->
   <section class="hero">
-    <!-- 実写背景 -->
-    <div class="hero__img-bg">
-      <img
-        src="https://tblg.k-img.com/restaurant/images/Rvw/305012/640x640_rect_c52ffe8269bf645cc3e8c6710a78cf77.jpg"
-        alt="Gelateria & Delfino 511 のジェラート"
-        loading="eager"
-      />
-      <div class="hero__overlay"></div>
-    </div>
+    <div class="hero__inner">
 
-    <div class="hero__content">
-      <p class="hero__tagline">宇都宮発、本場イタリアの味</p>
-      <h1 class="hero__title">
-        <span class="hero__title-en">Gelato Artigianale</span>
-        <span class="hero__title-jp">一口で笑顔になれる<br>本物のジェラートを。</span>
-      </h1>
-      <p class="hero__desc">
-        毎朝6時、職人が丁寧に仕込む本格ジェラート。<br>
-        栃木の恵みと、フィレンツェ仕込みの技が出会う場所。
-      </p>
-      <!-- CTA × 2 -->
-      <div class="hero__ctas">
-        <a href="#flavors" class="hero__cta hero__cta--primary">今日のフレーバーをチェックする</a>
-        <a href="#access" class="hero__cta hero__cta--secondary">アクセスを見る</a>
+      <!-- テキスト：中央揃え -->
+      <div class="hero__content">
+        <p class="hero__tagline">宇都宮発、本場イタリアの味</p>
+        <h1 class="hero__title">
+          <span class="hero__title-en">Gelato Artigianale</span>
+          <span class="hero__title-jp">一口で笑顔になれる<br>本物のジェラートを。</span>
+        </h1>
+        <p class="hero__desc">
+          毎朝6時、職人が丁寧に仕込む本格ジェラート。<br>
+          栃木の恵みと、フィレンツェ仕込みの技が出会う場所。
+        </p>
+        <div class="hero__ctas">
+          <a href="#flavors" class="hero__cta hero__cta--primary">今日のフレーバーをチェックする</a>
+          <a href="#access" class="hero__cta hero__cta--secondary">アクセスを見る</a>
+        </div>
+        <p class="hero__microcopy">📍 予約不要・当日テイクアウト可 ｜ 月曜定休</p>
       </div>
-      <!-- マイクロコピー -->
-      <p class="hero__microcopy">📍 予約不要・当日テイクアウト可 ｜ 月曜定休</p>
+
+      <!-- 斜めフォト -->
+      <div class="hero__visual">
+        <div class="hero__photo-tilt">
+          <img
+            src="https://tblg.k-img.com/restaurant/images/Rvw/305012/640x640_rect_c52ffe8269bf645cc3e8c6710a78cf77.jpg"
+            alt="Gelateria & Delfino 511 のジェラート"
+            loading="eager"
+          />
+        </div>
+      </div>
+
     </div>
 
     <div class="hero__scroll">
@@ -167,96 +171,54 @@
       </div>
       <div class="flavors__grid">
 
-        <div class="flavor-card reveal">
-          <div class="flavor-card__visual">
-            <img
-              src="https://livedoor.blogimg.jp/itotaku77-jd6ebytk/imgs/d/3/d319092c.jpg"
-              alt="とちおとめストロベリージェラート"
-              loading="lazy"
-            />
-            <div class="flavor-card__overlay flavor-card__overlay--strawberry"></div>
-          </div>
+        <div class="flavor-card flavor-card--strawberry reveal">
           <div class="flavor-card__body">
+            <div class="flavor-card__icon">🍓</div>
             <span class="flavor-card__tag">人気No.1</span>
             <h3>とちおとめストロベリー</h3>
             <p>栃木産とちおとめを贅沢に使用。甘みと酸味のバランスが絶妙な、いちごの味そのものです。</p>
           </div>
         </div>
 
-        <div class="flavor-card reveal">
-          <div class="flavor-card__visual">
-            <img
-              src="https://tblg.k-img.com/restaurant/images/Rvw/305012/640x640_rect_8859f136f03c80850790a7f0ceee5b14.jpg"
-              alt="シチリア産ピスタチオジェラート"
-              loading="lazy"
-            />
-            <div class="flavor-card__overlay flavor-card__overlay--pistachio"></div>
-          </div>
+        <div class="flavor-card flavor-card--pistachio reveal">
           <div class="flavor-card__body">
+            <div class="flavor-card__icon">🌿</div>
             <span class="flavor-card__tag">職人おすすめ</span>
             <h3>シチリア産ピスタチオ</h3>
             <p>シチリア・ブロンテ産の最高級ピスタチオを使用。濃厚なコクと自然の甘さが広がります。</p>
           </div>
         </div>
 
-        <div class="flavor-card reveal">
-          <div class="flavor-card__visual">
-            <img
-              src="https://tblg.k-img.com/restaurant/images/Rvw/305012/640x640_rect_6caee3dd1bacd44bda8fdf9d9053644b.jpg"
-              alt="ダークチョコレートジェラート"
-              loading="lazy"
-            />
-            <div class="flavor-card__overlay flavor-card__overlay--chocolate"></div>
-          </div>
+        <div class="flavor-card flavor-card--chocolate reveal">
           <div class="flavor-card__body">
+            <div class="flavor-card__icon">🍫</div>
             <span class="flavor-card__tag">定番人気</span>
             <h3>ダークチョコレート</h3>
             <p>カカオ70%以上の高品質チョコレートを惜しみなく使用。大人のための深みある苦甘さ。</p>
           </div>
         </div>
 
-        <div class="flavor-card reveal">
-          <div class="flavor-card__visual">
-            <img
-              src="https://tblg.k-img.com/restaurant/images/Rvw/305012/640x640_rect_73474edbd0688c32f3b527349b3166ef.jpg"
-              alt="宇治抹茶ジェラート"
-              loading="lazy"
-            />
-            <div class="flavor-card__overlay flavor-card__overlay--matcha"></div>
-          </div>
+        <div class="flavor-card flavor-card--matcha reveal">
           <div class="flavor-card__body">
+            <div class="flavor-card__icon">🍵</div>
             <span class="flavor-card__tag">季節限定</span>
             <h3>宇治抹茶</h3>
             <p>京都・宇治の最高級抹茶を贅沢に使用。ミルクの甘みと抹茶の香りが口の中で溶け合います。</p>
           </div>
         </div>
 
-        <div class="flavor-card reveal">
-          <div class="flavor-card__visual">
-            <img
-              src="https://tblg.k-img.com/restaurant/images/Rvw/305012/640x640_rect_8db97c483e872966a63a4121779c5fad.jpg"
-              alt="アルフォンソマンゴージェラート"
-              loading="lazy"
-            />
-            <div class="flavor-card__overlay flavor-card__overlay--mango"></div>
-          </div>
+        <div class="flavor-card flavor-card--mango reveal">
           <div class="flavor-card__body">
+            <div class="flavor-card__icon">🥭</div>
             <span class="flavor-card__tag">夏季限定</span>
             <h3>アルフォンソマンゴー</h3>
             <p>「マンゴーの王様」と名高いインド産アルフォンソ種使用。トロピカルな甘さが弾けます。</p>
           </div>
         </div>
 
-        <div class="flavor-card reveal">
-          <div class="flavor-card__visual">
-            <img
-              src="https://tblg.k-img.com/restaurant/images/Rvw/305012/640x640_rect_58a9a11c41c30c79f11a460bb83d8426.jpg"
-              alt="フィオル・ディ・ラッテジェラート"
-              loading="lazy"
-            />
-            <div class="flavor-card__overlay flavor-card__overlay--vanilla"></div>
-          </div>
+        <div class="flavor-card flavor-card--vanilla reveal">
           <div class="flavor-card__body">
+            <div class="flavor-card__icon">🥛</div>
             <span class="flavor-card__tag">定番</span>
             <h3>フィオル・ディ・ラッテ</h3>
             <p>「ミルクの花」の意。那須産の新鮮な生乳のみで作る、ジェラートの原点となる一品。</p>
@@ -464,13 +426,13 @@
           </div>
         </div>
         <div class="access__map">
-          <div class="map-placeholder">
-            <div class="map-placeholder__inner">
-              <div class="map-pin">📍</div>
-              <p>Gelateria<br>& Delfino 511</p>
-              <p class="map-placeholder__note">宇都宮市宝木町2-1138-7</p>
-            </div>
-          </div>
+          <iframe
+            src="https://maps.google.com/maps?q=栃木県宇都宮市宝木町2-1138-7&output=embed&hl=ja&z=16"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Gelateria & Delfino 511 アクセスマップ"
+          ></iframe>
         </div>
       </div>
     </div>
